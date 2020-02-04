@@ -1,13 +1,13 @@
 {
-  "name": "gulp-demo",
+  "name": "instanews",
   "version": "1.0.0",
-  "description": "A demo project for demonstrating usage of gulp.",
+  "description": "Project-3",
   "main": "index.js",
   "scripts": {
     "mygit": "git status; git add -A; git status;",
     "test": "ls-l"
   },
-  "author": "Hillary",
+  "author": "Hillary McLean",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.7",
