@@ -21,17 +21,22 @@ body {
 	height: 50vw;
 	font-weight: 500;
 	padding: .8rem;
-	line-height: 1;
+  line-height: 1;
+  position: relative;
 }
 
 .teaser:nth-child(1) {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://placekitten.com/200/300);
-  background-position: bottom, center;
+  background-image: url(https://placekitten.com/200/300);
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: 100% 25%, cover;
+  background-size: cover;
 	display: flex;
 	align-items: flex-end;
   width: 100%;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  background-color: black;
 }
 
 .teaser:nth-child(2) {
