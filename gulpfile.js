@@ -6,6 +6,13 @@ const terser = require('gulp-terser'),
 const browserSync = require('browser-sync').create();
 const eslint = require('gulp-eslint');
 
+const sass = require('gulp-sass'),
+  autoprefixer = require('gulp-autoprefixer'),
+  cssnano = require('gulp-cssnano'),
+  prettyError = require('gulp-prettyerror');
+
+
+
 gulp.task('scripts', function () {
   return gulp
     .src('./js/*.js') // What files do we want gulp to consume?
@@ -14,10 +21,21 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest('./build/js'))
 });
 
+gulp.task('sass', function () {
+  return gulp
+    .src('./sass/styles.scss')
+    .pipe(prettyError())
+    .pipe(sass())
+    .pipe(autoprefixer())
+    .pipe(cssnano())
+    .pipe(rename('styles.min.css'))
+    .pipe(gulp.dest('./build/css'));
+});
+
 gulp.task('watch', function () {
   gulp.watch('./js/*.js', gulp.series('lint', 'scripts', 'reload'));
   gulp.watch('./*.html', gulp.series('reload'));
-  gulp.watch('./css/*.css', gulp.series('reload'));
+  gulp.watch('./sass/*.scss', gulp.series('sass', 'reload'));
 
   // watch sass files. if there are changes run the styles task
 });
@@ -44,4 +62,4 @@ gulp.task('reload', function (done) {
 });
 
 // first run the scripts and the styles task. then watch for changes
-gulp.task('default', gulp.parallel('scripts', 'watch', 'browser-sync'));
+gulp.task('default', gulp.parallel('scripts', 'sass', 'watch', 'browser-sync'));
