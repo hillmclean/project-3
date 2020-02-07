@@ -9,7 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
       .done(function (data) {
-        console.log(data);
+        data.results.forEach(element => {
+          console.log(element[0, 'abstract']); // returns all abstacts
+        });
       });
   });
 }); // end of DOM content load
