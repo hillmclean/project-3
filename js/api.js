@@ -13,9 +13,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
       .done(function (data) {
 
+        // $.each(data.results, function (index, abstract) {
+        //   console.log(index, abstract);
+
+        // });
+
         for (let i = 0; i < 12; i++) {
-          console.log(data.results[i]);
-          // $('.results').append(`<li>${data.results}</li>`);
+          console.log(data.results[i].abstract);
+
+          // $.each(data.results[i], function (abstract) {
+          //   console.log(abstract, '');
+          // });
+
+          $('.results').append(`<li>${data.results[i].abstract}</li>`);
         }
 
         // data.results.forEach(element => {
