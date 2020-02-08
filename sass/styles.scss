@@ -27,9 +27,15 @@ body {
 
 .filter {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3rem;
+  padding: 1rem;
+}
+
+.filter p {
+  padding: 1rem;
+
 }
 
 /* ---- stories ---- */

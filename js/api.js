@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const categories = document.querySelector('.categories');
 
+
   categories.addEventListener('change', () => {
     let section = event.target.value;
 
@@ -12,9 +13,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
       .done(function (data) {
 
-        // let areaSelected = 0;
         for (let i = 0; i < 12; i++) {
           console.log(data.results[i]);
+          // $('.results').append(`<li>${data.results}</li>`);
         }
 
         // data.results.forEach(element => {
