@@ -13,28 +13,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
       .done(function (data) {
 
-        // $.each(data.results, function (index, abstract) {
-        //   console.log(index, abstract);
-
-        // });
-
         for (let i = 0; i < 12; i++) {
           console.log(data.results[i].abstract);
-
-          // $.each(data.results[i], function (abstract) {
-          //   console.log(abstract, '');
-          // });
-
           $('.results').append(`<li>${data.results[i].abstract}</li>`);
+          $("li").addClass("remove");
         }
 
-        // data.results.forEach(element => {
+        categories.addEventListener('change', () => {
+          $(".remove").remove();
+        });
+
+      }); // end of .done()
+
+  }); // end of eventlistener
+
+}); // end of DOM content load
+
+
+
+
+// old functions below: --------- //
+
+   // $.each(data.results, function (index, abstract) {
+        //   console.log(index, abstract);
+        // });
+
+   // data.results.forEach(element => {
         //   console.log(element[0, 'abstract']); // returns all abstacts
         //   $('.teaser').text(`${element[0, 'abstract']}`);
         // });
-      });
-    // teaser.textContent = `${event.target.value}`;
-  });
-
-}); // end of DOM content load
 
