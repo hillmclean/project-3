@@ -52,48 +52,35 @@ li {
   height: 20vw;
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-.article {
-  list-style: none;
-  display: flex;
-}
-
-.wrap    { 
-  flex-wrap: wrap;
-}  
-
-.wrap li {
-  background-image: url(https://placekitten.com/200/300);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.teaser {
-  background: tomato;
-  height: 80vw;
-  line-height: 1;
-  color: white;
-  font-size: 1em;
-  width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-
-  @include tablet {
-      max-width: 33.33%;
-      height: 40vw;
-      }
-    
-  @include desktop {
-      max-width: 25%;
-      height: 20vw;
-      }
 }
 
+// .teaser {
+//   background: tomato;
+//   height: 80vw;
+//   line-height: 1;
+//   color: white;
+//   font-size: 1em;
+//   width: 100%;
+//   display: flex;
+//   justify-content: flex-start;
+//   align-items: flex-end;
+
+//   @include tablet {
+//       max-width: 33.33%;
+//       height: 40vw;
+//       }
+    
+//   @include desktop {
+//       max-width: 25%;
+//       height: 20vw;
+//       }
+// }
+
 a p {
-  background: rgba(0, 0, 0, .8);
+  background: rgba(0, 0, 0, .5);
   padding: .8rem;
   text-decoration: none;
   color: white;

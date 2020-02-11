@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const categories = document.querySelector('.categories');
   const results = $('.results');
+  const stories = $('.stories');
 
   categories.addEventListener('change', () => {
     let section = event.target.value;
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
           console.log(element.multimedia[0].url);
           results.append(`
           <a href="${element.url}" target="_blank">
-            <li style="background-image: url(${element.multimedia[0].url})">  
+            <li class='remove' style="background-image: url(${element.multimedia[0].url})">  
               <p>${element.abstract}</p>
             </li>
           </a>`
@@ -28,7 +29,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
       }); // end of .done()
 
-  }); // end of eventlistener
+  }); // end of eventlistener adding content
+
+  categories.addEventListener('change', () => {
+    $('.remove').remove();
+
+  }); // end of eventlistener removing content
 
 }); // end of DOM content load
 
