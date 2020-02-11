@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   categories.addEventListener('change', () => {
     let section = event.target.value;
     results.innerHTML = '';
+
     $.ajax({
       method: 'GET',
       url: `https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=tGGrhXgAGkkUeGlxub1PQ7smASFvNVgP`
@@ -16,10 +17,12 @@ document.addEventListener('DOMContentLoaded', function () {
         data.results.forEach(element => {
 
           console.log(element.multimedia[0].url);
-          results.append(`<li style="background-image: url(${element.multimedia[0].url})">  
-             
-                  <p>${element.abstract}</p>
-              </li>`
+          results.append(`
+          <a href="${element.url}" target="_blank">
+            <li style="background-image: url(${element.multimedia[0].url})">  
+              <p>${element.abstract}</p>
+            </li>
+          </a>`
           );
         });
 
@@ -28,10 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }); // end of eventlistener
 
 }); // end of DOM content load
-
-// function setImageSource(imageId, imageSrc) {
-//   $('.imageSrc).attr('src', imageSrc);
-// }
 
 
 
