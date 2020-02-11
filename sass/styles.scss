@@ -41,6 +41,19 @@ body {
 /* ---- stories ---- */
 
 
+.results {
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+li {
+  height: 20vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .article {
   list-style: none;
   display: flex;

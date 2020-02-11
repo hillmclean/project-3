@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   const categories = document.querySelector('.categories');
-
+  const results = $('.results');
 
   categories.addEventListener('change', () => {
     let section = event.target.value;
-
+    results.innerHTML = '';
     $.ajax({
       method: 'GET',
       url: `https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=tGGrhXgAGkkUeGlxub1PQ7smASFvNVgP`
@@ -13,20 +13,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
       .done(function (data) {
 
-        for (let i = 0; i < 12; i++) {
-          console.log(data.results[i].abstract);
-          $('.results').append(`<li>${data.results[i].abstract}</li>`);
-          $('li').addClass('remove');
-        }
+        data.results.forEach(element => {
 
-        for (let i = 0; i < 12; i++) {
-          console.log(data.results[i].multimedia[2].url);
-          $('li').append(`<img src="${data.results[i].multimedia[2].url}"</img>`);
-          $('li').addClass('remove');
-        }
-
-        categories.addEventListener('change', () => {
-          $('.remove').remove();
+          console.log(element.multimedia[0].url);
+          results.append(`<li style="background-image: url(${element.multimedia[0].url})">  
+             
+                  <p>${element.abstract}</p>
+              </li>`
+          );
         });
 
       }); // end of .done()
@@ -52,4 +46,16 @@ document.addEventListener('DOMContentLoaded', function () {
         //   console.log(element[0, 'abstract']); // returns all abstacts
         //   $('.teaser').text(`${element[0, 'abstract']}`);
         // });
+
+// for (let i = 0; i < 12; i++) {
+        //   console.log(data.results[i].abstract);
+        //   results.append(`<li>${data.results[i].abstract}</li>`);
+        //   //$('li').addClass('remove');
+        // }
+
+        // for (let i = 0; i < 12; i++) {
+        //   console.log(data.results[i].multimedia[2].url);
+        //   $('li').append(`<img src="${data.results[i].multimedia[2].url}"</img>`);
+        //   $('li').addClass('remove');
+        // }
 
