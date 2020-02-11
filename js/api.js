@@ -16,11 +16,17 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < 12; i++) {
           console.log(data.results[i].abstract);
           $('.results').append(`<li>${data.results[i].abstract}</li>`);
-          $("li").addClass("remove");
+          $('li').addClass('remove');
+        }
+
+        for (let i = 0; i < 12; i++) {
+          console.log(data.results[i].multimedia[2].url);
+          $('li').append(`<img src="${data.results[i].multimedia[2].url}"</img>`);
+          $('li').addClass('remove');
         }
 
         categories.addEventListener('change', () => {
-          $(".remove").remove();
+          $('.remove').remove();
         });
 
       }); // end of .done()
@@ -28,6 +34,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }); // end of eventlistener
 
 }); // end of DOM content load
+
+// function setImageSource(imageId, imageSrc) {
+//   $('.imageSrc).attr('src', imageSrc);
+// }
 
 
 
