@@ -45,16 +45,32 @@ body {
   margin: 0 auto;
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
+
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+      }
+        
+  @include desktop {
+    grid-template-columns: repeat(4, 1fr);
+      }
 }
 
 li {
-  height: 20vw;
+  height: 80vw;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
+
+  @include tablet {
+    height: 40vw;
+      }
+        
+  @include desktop {
+    height: 20vw;
+      }
 }
 
 // .teaser {
@@ -80,10 +96,11 @@ li {
 // }
 
 a p {
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, .7);
   padding: .8rem;
   text-decoration: none;
   color: white;
+  width: 100%
 }
 
 a {
@@ -92,6 +109,5 @@ a {
 
 footer {
   text-align: center;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding: 3rem;
 }

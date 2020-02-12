@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   categories.addEventListener('change', () => {
     let section = event.target.value;
-    results.innerHTML = '';
+    // results.innerHTML = '';
 
     $.ajax({
       method: 'GET',
@@ -16,15 +16,14 @@ document.addEventListener('DOMContentLoaded', function () {
       .done(function (data) {
 
         data.results.forEach(element => {
-
-          console.log(element.multimedia[0].url);
+          // console.log(element.multimedia[0].url);
           results.append(`
           <a href="${element.url}" target="_blank">
             <li class='remove' style="background-image: url(${element.multimedia[0].url})">  
               <p>${element.abstract}</p>
             </li>
           </a>`
-          );
+          )
         });
 
       }); // end of .done()
