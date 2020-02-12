@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   categories.addEventListener('change', () => {
     let section = event.target.value;
-    // results.innerHTML = '';
+    results[0].innerHTML = '';
 
     $.ajax({
       method: 'GET',
@@ -24,16 +24,17 @@ document.addEventListener('DOMContentLoaded', function () {
             </li>
           </a>`
           )
+
         });
 
       }); // end of .done()
 
   }); // end of eventlistener adding content
 
-  categories.addEventListener('change', () => {
-    $('.remove').remove();
+  // categories.addEventListener('change', () => {
+  //   $('.remove').remove();
 
-  }); // end of eventlistener removing content
+  // }); // end of eventlistener removing content
 
 }); // end of DOM content load
 
