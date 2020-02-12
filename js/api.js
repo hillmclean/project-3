@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const categories = document.querySelector('.categories');
   const results = $('.results');
-  const stories = $('.stories');
 
   categories.addEventListener('change', () => {
     let section = event.target.value;
@@ -16,20 +15,22 @@ document.addEventListener('DOMContentLoaded', function () {
       .done(function (data) {
 
         data.results.forEach(element => {
-          // console.log(element.multimedia[0].url);
+
           results.append(`
           <a href="${element.url}" target="_blank">
-            <li class='remove' style="background-image: url(${element.multimedia[0].url})">  
+            <li class='article' style="background-image: url(${element.multimedia[0].url})">  
               <p>${element.abstract}</p>
             </li>
           </a>`
           )
-
+          if (results.length > 12) {
+            results.splice(0, 12);
+          }
         });
-
       }); // end of .done()
 
   }); // end of eventlistener adding content
+
 
   // categories.addEventListener('change', () => {
   //   $('.remove').remove();
