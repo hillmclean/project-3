@@ -7,24 +7,23 @@ document.addEventListener('DOMContentLoaded', function () {
     let section = event.target.value;
     results[0].innerHTML = '';
 
+
     $.ajax({
       method: 'GET',
       url: `https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=tGGrhXgAGkkUeGlxub1PQ7smASFvNVgP`
     })
 
       .done(function (data) {
-
-        data.results.forEach(element => {
-
-          results.append(`
-          <a href="${element.url}" target="_blank">
-            <li class='article' style="background-image: url(${element.multimedia[0].url})">  
-              <p>${element.abstract}</p>
-            </li>
-          </a>`
-          )
-          if (results.length > 12) {
-            results.splice(0, 12);
+        let filtered = data.results.slice(0, 12);
+        filtered.forEach(element => {
+          if (element.multimedia.filter(multimedia => multimedia.length > 0)) {
+            let articles = (`
+                <a href="${element.url}" target="_blank">
+                  <li class='article' style="background-image: url(${element.multimedia[0].url})">  
+                    <p>${element.abstract}</p>
+                  </li>
+                </a>`);
+            results.append(articles);
           }
         });
       }); // end of .done()
@@ -65,3 +64,15 @@ document.addEventListener('DOMContentLoaded', function () {
         //   $('li').addClass('remove');
         // }
 
+        // if (results.length > 12) {
+        //   results.splice(0, 12);
+        // }
+
+      //   results.append(`
+      //   <a href="${element.url}" target="_blank">
+      //     <li class='article' style="background-image: url(${element.multimedia[0].url})">  
+      //       <p>${element.abstract}</p>
+      //     </li>
+      //   </a>`
+      //   )
+      // });
