@@ -16,6 +16,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include tablet {
+    flex-direction: row;
+      }
 }
 
 .logo-box {
@@ -23,6 +27,7 @@ body {
   justify-content: center;
   align-items: center;
   padding-top: 15rem;
+
 }
 
 .filter {
@@ -31,11 +36,11 @@ body {
   justify-content: center;
   align-items: center;
   padding: 1rem;
+
 }
 
 .filter p {
   padding: 1rem;
-
 }
 
 /* ---- stories ---- */
