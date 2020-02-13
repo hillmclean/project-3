@@ -1,9 +1,9 @@
-document.addEventListener('DOMContentLoaded', function () {
+$(function () {
 
-  const categories = document.querySelector('.categories');
+  const categories = $('.categories');
   const results = $('.results');
 
-  categories.addEventListener('change', () => {
+  categories.change(function () {
     let section = event.target.value;
     results[0].innerHTML = '';
 
@@ -14,27 +14,26 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
       .done(function (data) {
-        let filtered = data.results.slice(0, 12);
-        filtered.forEach(element => {
-          if (element.multimedia.filter(multimedia => multimedia.length > 0)) {
-            let articles = (`
+
+        let getContent = data.results.filter(function (item) {
+          if (item.multimedia !== null) {
+            return item;
+          }
+        }).slice(0, 12);
+
+        getContent.forEach(element => {
+          let articles = (`
                 <a href="${element.url}" target="_blank">
                   <li class='article' style="background-image: url(${element.multimedia[0].url})">  
                     <p>${element.abstract}</p>
                   </li>
                 </a>`);
-            results.append(articles);
-          }
+          results.append(articles);
         });
+
       }); // end of .done()
 
-  }); // end of eventlistener adding content
-
-
-  // categories.addEventListener('change', () => {
-  //   $('.remove').remove();
-
-  // }); // end of eventlistener removing content
+  }); // end of eventlistener
 
 }); // end of DOM content load
 
