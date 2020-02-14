@@ -56,13 +56,11 @@ body {
 .header-animation {
   padding-top: 4rem;
   padding-bottom: 4rem;
-  animation-iteration-count: infinite;
   
   @include tablet {
   // padding-top: 4rem;
   padding-bottom: 0rem;
   transition-property: padding-top, padding-bottom;
-  animation-iteration-count: infinite;
   }
 }
 
@@ -74,7 +72,6 @@ body {
 
 .logo-animation {
   transform: translateY(-20px);
-  animation-iteration-count: infinite;
 
   @include tablet {
     transform: scale(.3) translateY(-15px);
@@ -83,7 +80,6 @@ body {
 
 .filter-animation {
   transform: translateY(-10px);
-  animation-iteration-count: infinite;
 
   @include tablet {
     transform: translateX(-50px) translateY(-5px);

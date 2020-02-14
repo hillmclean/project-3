@@ -14,12 +14,12 @@ $(function () {
     let section = event.target.value;
     results[0].innerHTML = '';
 
-    logo.toggleClass('logo-animation');
-    filter.toggleClass('filter-animation');
-    header.toggleClass('header-animation');
     loader.toggleClass('loader-gif-animation');
 
     $(document).ajaxStart(function () {
+      logo.toggleClass('logo-animation');
+      filter.toggleClass('filter-animation');
+      header.toggleClass('header-animation');
       loader.show();
     });
 
@@ -36,11 +36,6 @@ $(function () {
           }
         }).slice(0, 12);
 
-        logo.toggleClass('logo-animation');
-        filter.toggleClass('filter-animation');
-        header.toggleClass('header-animation');
-        loader.toggleClass('loader-gif-animation');
-
         getContent.forEach(element => {
           let articles = (`
                 <a href="${element.url}" target="_blank">
@@ -53,10 +48,6 @@ $(function () {
         });
 
         $(document).ajaxStop(function () {
-          logo.toggleClass('logo-animation');
-          filter.toggleClass('filter-animation');
-          header.toggleClass('header-animation');
-          loader.toggleClass('loader-gif-animation');
           loader.hide();
         });
 
