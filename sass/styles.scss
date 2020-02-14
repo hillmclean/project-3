@@ -1,10 +1,16 @@
-* {
-	box-sizing: border-box;
-}
 
 @import 'reset';
 @import 'variables';
 @import 'mixins';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 1rem;
+  color: #ffffff;
+}
 
 body {
 	background-color: black;
@@ -17,6 +23,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  transition-property: margin-top;
+  transition-duration: 0s;
+  transition-delay: 0s;
 
   @include tablet {
     flex-direction: row;
@@ -32,8 +42,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 15rem;
+  margin-top: 10rem;
+}
 
+.logo-animation {
+  transform: translateY(-80px);
 }
 
 .filter {
@@ -41,10 +54,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  margin-top: 1rem;
 
   @include tablet {
-    padding-top: 190px;
+    margin-top: 190px;
     text-align: left;
     justify-content: flex-start;
     align-items: flex-start;
@@ -53,8 +66,8 @@ body {
 }
 
 .filter p {
-  padding-bottom: 1rem;
-  padding-top: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 
 }
 
