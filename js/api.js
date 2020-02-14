@@ -5,8 +5,8 @@ $(function () {
   const logo = $('.nyt-logo');
   const filter = $('.filter');
   const header = $('.header');
-  // const stories = $('.stories')
-  // const loader = $('.loader-gif');
+  const stories = $('.stories')
+  const loader = $('.loader-gif');
   // const lazyLoader = $('ul.lazy');
   // const lazyClass = $('.lazy');
 
@@ -17,6 +17,8 @@ $(function () {
     logo.toggleClass('logo-animation');
     filter.toggleClass('filter-animation');
     header.toggleClass('header-animation');
+    loader.toggleClass('loader-gif-animation');
+
 
     $.ajax({
       method: 'GET',
@@ -24,6 +26,10 @@ $(function () {
     })
 
       .done(function (data) {
+
+        $(document).ajaxStart(function () {
+          loader.show();
+        });
 
         let getContent = data.results.filter(function (item) {
           if (item.multimedia !== null) {
@@ -40,6 +46,10 @@ $(function () {
                 </a>`);
           results.append(articles);
           // $(lazyLoader).lazyload().removeClass(lazyClass);
+        });
+
+        $(document).ajaxStop(function () {
+          loader.hide();
         });
 
       }); // end of .done()

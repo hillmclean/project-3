@@ -18,6 +18,17 @@ body {
   justify-content: center;
 }
 
+.loader-gif {
+  max-width: 3rem;
+  opacity: 0;
+  transition-property: opacity;
+}
+
+.loader-gif-animation { 
+  transition-property: opacity;
+  opacity: 1;
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -45,6 +56,7 @@ body {
 .header-animation {
   padding-top: 4rem;
   padding-bottom: 4rem;
+  animation-iteration-count: infinite;
   
   @include tablet {
   // padding-top: 4rem;
@@ -61,6 +73,7 @@ body {
 
 .logo-animation {
   transform: translateY(-20px);
+  animation-iteration-count: infinite;
 
   @include tablet {
     transform: scale(.3) translateY(-15px);
@@ -69,6 +82,7 @@ body {
 
 .filter-animation {
   transform: translateY(-10px);
+  animation-iteration-count: infinite;
 
   @include tablet {
     transform: translateX(-50px) translateY(-5px);
