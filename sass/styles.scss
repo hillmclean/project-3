@@ -45,7 +45,12 @@ body {
 .header-animation {
   padding-top: 4rem;
   padding-bottom: 4rem;
+  
+  @include tablet {
+  // padding-top: 4rem;
+  padding-bottom: 0rem;
   transition-property: padding-top, padding-bottom;
+  }
 }
 
 .nyt-logo {
@@ -55,7 +60,7 @@ body {
 }
 
 .logo-animation {
-  transform: translateY(-50px);
+  transform: translateY(-20px);
 
   @include tablet {
     transform: scale(.3) translateY(-15px);
