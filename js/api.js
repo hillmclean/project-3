@@ -19,6 +19,9 @@ $(function () {
     header.toggleClass('header-animation');
     loader.toggleClass('loader-gif-animation');
 
+    $(document).ajaxStart(function () {
+      loader.show();
+    });
 
     $.ajax({
       method: 'GET',
@@ -27,15 +30,16 @@ $(function () {
 
       .done(function (data) {
 
-        $(document).ajaxStart(function () {
-          loader.show();
-        });
-
         let getContent = data.results.filter(function (item) {
           if (item.multimedia !== null) {
             return item;
           }
         }).slice(0, 12);
+
+        logo.toggleClass('logo-animation');
+        filter.toggleClass('filter-animation');
+        header.toggleClass('header-animation');
+        loader.toggleClass('loader-gif-animation');
 
         getContent.forEach(element => {
           let articles = (`
@@ -49,6 +53,10 @@ $(function () {
         });
 
         $(document).ajaxStop(function () {
+          logo.toggleClass('logo-animation');
+          filter.toggleClass('filter-animation');
+          header.toggleClass('header-animation');
+          loader.toggleClass('loader-gif-animation');
           loader.hide();
         });
 
