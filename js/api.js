@@ -2,6 +2,8 @@ $(function () {
 
   const categories = $('.categories');
   const results = $('.results');
+  const loader = $('.loader-gif').attr('src', './assets/images/ajax-loader.gif')
+  const stories = $('.stories');
 
   categories.change(function () {
     let section = event.target.value;

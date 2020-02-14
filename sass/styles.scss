@@ -14,12 +14,18 @@ body {
 
 .header {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
   @include tablet {
     flex-direction: row;
       }
+  
+  @include desktop {
+    justify-content: flex-start;
+      }
+  
 }
 
 .logo-box {
@@ -37,10 +43,19 @@ body {
   align-items: center;
   padding: 1rem;
 
+  @include tablet {
+    padding-top: 190px;
+    text-align: left;
+    justify-content: flex-start;
+    align-items: flex-start;
+      }
+
 }
 
 .filter p {
-  padding: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+
 }
 
 /* ---- stories ---- */
@@ -92,5 +107,14 @@ a {
 
 footer {
   text-align: center;
-  padding: 10rem;
+  padding-top: 10rem;
+
+  @include tablet {
+    padding-top: 15rem;
+      }
+
+  @include desktop {
+    text-align: left;
+    margin-left: 3rem;
+      }
 }
