@@ -4,6 +4,7 @@ $(function () {
   const results = $('.results');
   const logo = $('.nyt-logo');
   const filter = $('.filter');
+  const header = $('.header');
 
   categories.change(function () {
     let section = event.target.value;
@@ -19,6 +20,7 @@ $(function () {
 
         logo.toggleClass('logo-animation');
         filter.toggleClass('filter-animation');
+        header.toggleClass('header-animation');
 
 
         let getContent = data.results.filter(function (item) {
