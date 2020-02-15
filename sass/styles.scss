@@ -27,7 +27,7 @@ body {
 .loader-gif-animation { 
   transition-property: opacity;
   opacity: 1;
-  transform: translateX(168px) translateY(-100px);;
+  transform: translateX(200px) translateY(-100px);;
 }
 
 .header {
@@ -44,7 +44,7 @@ body {
 
   @include tablet {
     flex-direction: row;
-    height: 300px;
+    // height: 250px;
     margin-top: 10rem;
     margin-bottom: 1rem;
     padding: 6rem;
