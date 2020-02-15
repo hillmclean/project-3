@@ -38,17 +38,16 @@ body {
   height: 200px;
   margin-top: 15rem;
   margin-bottom: 8rem;
-  transition-property: margin-top, margin-bottom;
+  transition-property: margin-top, margin-bottom, height;
   // padding-bottom: 10rem;
 
 
   @include tablet {
     flex-direction: row;
-    height: 150px;
+    height: 300px;
     margin-top: 10rem;
     margin-bottom: 1rem;
     padding: 6rem;
-    // padding-bottom:5rem;
     transition-property: padding-top, padding-bottom, height;
       }
   
@@ -60,11 +59,12 @@ body {
 .header-animation {
   margin-top: 0rem;
   margin-bottom: 0rem;
+  height: 500px;
 
   
   @include tablet {
-  // padding-top: 4rem;
-  padding-bottom: 0rem;
+  height: 150px;
+  padding: 0rem;
   transition-property: padding-top, padding-bottom;
   }
 }
@@ -76,8 +76,6 @@ body {
 }
 
 .logo-animation {
-  // transform: translateY(-20px);
-
   @include tablet {
     transform: scale(.3);
   }
@@ -164,8 +162,8 @@ a {
 
 footer {
   text-align: center;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding: 3rem;
+
 
   @include tablet {
     padding-top: 5rem;
@@ -173,6 +171,6 @@ footer {
 
   @include desktop {
     text-align: left;
-    margin-left: 3rem;
+    margin-left: 6rem;
       }
 }
