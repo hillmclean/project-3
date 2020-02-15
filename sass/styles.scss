@@ -8,19 +8,14 @@
 }
 
 html {
-  font-size: 1rem;
-  color: #ffffff;
-  font-family: 'open_sanslight';
-}
-
-body {
-	background-color: black;
-  color: white;
-  justify-content: center;
+  font-size: $font-size;
+  color: $font-color;
+  font-family: $brand-font;
+  background-color: black;
 }
 
 .loader-gif {
-  max-width: 3rem;
+  max-width: $gif-size;
   opacity: 0;
   transition-property: opacity;
 }
@@ -31,6 +26,12 @@ body {
   margin:auto;
   transition-property: opacity;
   opacity: 1;
+
+  @include tablet {
+    position: fixed;
+    top:-100%; right:-100%; left:-100%; bottom:-100%;
+    margin: auto;
+  }
 }
 
 .header {
@@ -94,6 +95,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 
   @include tablet {
     text-align: left;
@@ -160,7 +162,7 @@ a {
   text-decoration: none;
 }
 
-footer {
+.footer {
   text-align: center;
   padding: 3rem;
 
