@@ -7,19 +7,17 @@ $(function () {
   const header = $('.header');
   const stories = $('.stories')
   const loader = $('.loader-gif');
-  // const lazyLoader = $('ul.lazy');
-  // const lazyClass = $('.lazy');
 
   categories.change(function () {
     let section = event.target.value;
     results[0].innerHTML = '';
 
-    loader.toggleClass('loader-gif-animation');
+    loader.addClass('loader-gif-animation');
+    logo.addClass('logo-animation');
+    filter.addClass('filter-animation');
+    header.addClass('header-animation');
 
     $(document).ajaxStart(function () {
-      logo.toggleClass('logo-animation');
-      filter.toggleClass('filter-animation');
-      header.toggleClass('header-animation');
       loader.show();
     });
 
