@@ -10,6 +10,7 @@
 html {
   font-size: 1rem;
   color: #ffffff;
+  font-family: 'open_sanslight';
 }
 
 body {
@@ -25,9 +26,11 @@ body {
 }
 
 .loader-gif-animation { 
+  position: fixed;
+  top:-70%; right:-100%; left:-100%; bottom:-100%;
+  margin:auto;
   transition-property: opacity;
   opacity: 1;
-  transform: translateX(200px) translateY(-100px);;
 }
 
 .header {
@@ -39,12 +42,9 @@ body {
   margin-top: 15rem;
   margin-bottom: 8rem;
   transition-property: margin-top, margin-bottom, height;
-  // padding-bottom: 10rem;
-
 
   @include tablet {
     flex-direction: row;
-    // height: 250px;
     margin-top: 10rem;
     margin-bottom: 1rem;
     padding: 6rem;
@@ -119,7 +119,7 @@ body {
 .results {
   margin: 0 auto;
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: .5rem;
   grid-template-columns: 1fr;
 
   @include tablet {
@@ -163,11 +163,6 @@ a {
 footer {
   text-align: center;
   padding: 3rem;
-
-
-  @include tablet {
-    padding-top: 5rem;
-      }
 
   @include desktop {
     text-align: left;

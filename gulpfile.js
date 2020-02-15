@@ -36,8 +36,6 @@ gulp.task('watch', function () {
   gulp.watch('./js/*.js', gulp.series('lint', 'scripts', 'reload'));
   gulp.watch('./*.html', gulp.series('reload'));
   gulp.watch('./sass/*.scss', gulp.series('sass', 'reload'));
-
-  // watch sass files. if there are changes run the styles task
 });
 
 gulp.task('browser-sync', function () {
