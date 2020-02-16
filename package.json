@@ -2,7 +2,7 @@
   "name": "instanews",
   "version": "1.0.0",
   "description": "Project-3",
-  "main": "index.js",
+  "main": "api.js",
   "scripts": {
     "mygit": "git status; git add -A; git status;",
     "test": "ls-l"
