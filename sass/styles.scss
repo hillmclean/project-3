@@ -9,7 +9,7 @@
 
 html {
   font-size: $font-size;
-  color: $font-color;
+  color: $primary-color;
   font-family: $brand-font;
   background-color: black;
 }
@@ -138,9 +138,6 @@ li {
   height: 80vw;
   background-size: cover;
   background-repeat: no-repeat;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
 
   @include tablet {
     height: 40vw;
@@ -151,19 +148,25 @@ li {
       }
 }
 
-a p {
-  background: rgba(0, 0, 0, .7);
-  padding: .8rem;
-  text-decoration: none;
-  color: white;
-  width: 100%;
-}
-
 a {
   text-decoration: none;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+
+  p {
+    background: rgba(0, 0, 0, .7);
+    padding: .8rem;
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    }
 }
 
 .footer {
+  color: $secondary-color;
   text-align: center;
   padding: 3rem;
 
