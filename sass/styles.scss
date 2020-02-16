@@ -35,19 +35,20 @@ html {
 }
 
 .header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-center();
   height: 200px;
-  margin-top: 15rem;
-  margin-bottom: 8rem;
+  margin: {
+    top: 15rem;
+    bottom: 8rem;
+    }
   transition-property: margin-top, margin-bottom, height;
 
   @include tablet {
     flex-direction: row;
-    margin-top: 10rem;
-    margin-bottom: 1rem;
+    margin: { 
+      top: 10rem;
+      bottom: 1rem;
+      }
     padding: 6rem;
     transition-property: padding-top, padding-bottom, height;
       }
@@ -58,8 +59,10 @@ html {
 }
 
 .header-animation {
-  margin-top: 0rem;
-  margin-bottom: 0rem;
+  margin: {
+    top: 0rem;
+    bottom: 0rem;
+    }
   height: 500px;
 
   
@@ -91,11 +94,7 @@ html {
 }
 
 .filter {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
+  @include flex-center();
 
   @include tablet {
     text-align: left;
@@ -107,8 +106,10 @@ html {
 }
 
 .filter p {
-  margin-bottom: 1rem;
-  margin-top: 2rem;
+  margin: {
+    bottom: 1rem;
+    top: 2rem;
+    }
 
   @include tablet {
     margin-top: 0rem;
@@ -155,7 +156,7 @@ a p {
   padding: .8rem;
   text-decoration: none;
   color: white;
-  width: 100%
+  width: 100%;
 }
 
 a {
