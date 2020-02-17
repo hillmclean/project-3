@@ -124,7 +124,7 @@ html {
 
 }
 
-.filter p {
+label {
   margin: {
     bottom: 1rem;
     top: 2rem;
@@ -135,12 +135,12 @@ html {
   }
 }
 
-.categories {
-  background-color: $primary-color;
-  font-size: .8rem;
-  border-radius: 0rem;
+select.categories { 
+  font-size: $font-size;
+  border-radius: 0px;
   font-family: $brand-font;
-}
+  border: none;  
+} 
 
 /* ---- stories ---- */
 
