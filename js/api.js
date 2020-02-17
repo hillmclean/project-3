@@ -35,7 +35,7 @@ $(function () {
 
         getContent.forEach(element => {
           let articles = (`
-                <li class='article' style="background-image: url(${element.multimedia[0].url})" >
+                <li class='article' style="background-image: url(${element.multimedia[0].url})">
                   <a href="${element.url}" target="_blank">
                     <p>${element.abstract}</p>
                   </a>

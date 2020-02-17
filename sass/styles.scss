@@ -135,6 +135,13 @@ html {
   }
 }
 
+.categories {
+  background-color: $primary-color;
+  font-size: .8rem;
+  border-radius: 0rem;
+  font-family: $brand-font;
+}
+
 /* ---- stories ---- */
 
 
@@ -163,7 +170,7 @@ li {
       }
         
   @include desktop {
-    height: 20vw;
+    height: 35vw;
       }
 }
 
