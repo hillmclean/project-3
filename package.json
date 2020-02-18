@@ -1,7 +1,7 @@
 {
-  "name": "instanews",
+  "name": "Instanews",
   "version": "1.0.0",
-  "description": "Project-3",
+  "description": "Project-3 of Red Academy's Web Dev program",
   "main": "api.js",
   "scripts": {
     "mygit": "git status; git add -A; git status;",
