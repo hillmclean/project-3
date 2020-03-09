@@ -49,7 +49,11 @@ $(function () {
           loader.hide();
         });
 
-      }); // end of .done()
+      }) // end of .done()
+
+      .fail(function (error) {
+        console.log('Post error: ' + error);
+      });
 
   }); // end of eventlistener
 
